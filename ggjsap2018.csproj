@@ -288,6 +288,7 @@
     <Compile Include="Assets\Scripts\AutoScaleCamera.cs" />
     <Compile Include="Assets\Scripts\HumanLaught.cs" />
     <Compile Include="Assets\Scripts\HumanMove.cs" />
+    <Compile Include="Assets\Scripts\HumanStateComponent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
