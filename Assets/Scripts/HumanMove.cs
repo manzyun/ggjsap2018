@@ -70,7 +70,7 @@ public class HumanMove : MonoBehaviour {
         }
     }
 
-    void GoRandomPosition()
+    public void GoRandomPosition()
     {
         while (true)
         {
