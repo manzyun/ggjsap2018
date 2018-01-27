@@ -12,7 +12,7 @@ public class AutoScaleCamera : MonoBehaviour
     float height = 720.0f;
 
     const float pixelperunit = 100.0f;
-    Vector3 camera_pos = new Vector3(0, 0, -32.0f);
+    Vector3 camera_pos = new Vector3(0, 32, 0);
 
     Camera main_camera;
 
