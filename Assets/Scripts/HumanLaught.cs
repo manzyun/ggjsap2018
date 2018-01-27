@@ -19,6 +19,11 @@ public class HumanLaught : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (Input.GetKey(KeyCode.C))
+        {
+            LaughtAdd(0.1f);
+        }
 	}
 
     public void LaughtAdd(float AddPoint)

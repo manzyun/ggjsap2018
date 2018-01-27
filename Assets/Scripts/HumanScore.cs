@@ -24,12 +24,12 @@ public class HumanScore : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timer += Time.deltaTime;
-        if(timer >= scoreInterval)
-        {
-            timer = 0.0f;
-            CalcScore();
-        }  
+        //timer += Time.deltaTime;
+        //if(timer >= scoreInterval)
+        //{
+        //    timer = 0.0f;
+        //    CalcScore();
+        //}  
 	}
 
     private void CalcScore()
