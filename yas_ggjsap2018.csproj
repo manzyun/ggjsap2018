@@ -289,8 +289,13 @@
     <Compile Include="Assets\Scripts\GameInstanceComponent.cs" />
     <Compile Include="Assets\Scripts\HumanLaught.cs" />
     <Compile Include="Assets\Scripts\HumanMove.cs" />
+    <Compile Include="Assets\Scripts\Level00SpawnScript.cs" />
+    <Compile Include="Assets\Scripts\Level01SpawnScript.cs" />
     <Compile Include="Assets\Scripts\LevelNodeComponent.cs" />
     <Compile Include="Assets\Scripts\LevelSelectManagerComponent.cs" />
+    <Compile Include="Assets\Scripts\MainManagerComponent.cs" />
+    <Compile Include="Assets\Scripts\Spawn.cs" />
+    <Compile Include="Assets\Scripts\SpawnInterface.cs" />
     <Compile Include="Assets\Scripts\TitleManagerComponent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
