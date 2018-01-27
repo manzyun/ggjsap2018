@@ -22,12 +22,12 @@ GameObject:
   - component: {fileID: 33144238311524920}
   - component: {fileID: 65839875636471284}
   - component: {fileID: 23088165909608512}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1772480055872410
 GameObject:
@@ -37,12 +37,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4584470679453468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Housse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1826600237643310
 GameObject:
@@ -52,12 +52,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4385652278951246}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HouseModelRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1898746756499602
 GameObject:
@@ -69,12 +69,12 @@ GameObject:
   - component: {fileID: 4359485417483348}
   - component: {fileID: 33603819334413238}
   - component: {fileID: 23102895084546720}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4359485417483348
 Transform:
