@@ -15,20 +15,13 @@ public class HumanLaught : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        if(Input.GetMouseButtonDown(0))
-        {
-            LaughtAdd(0.1f);
-        }
-    }
 
     public void LaughtAdd(float AddPoint)
     {
         if (max_laught_trigger == false)
         {
             laught += AddPoint;
+            GetComponent<AudioSource>().Play();
 
             if (laught > 1.0f)
             {

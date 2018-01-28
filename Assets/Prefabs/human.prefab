@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4522272661097920}
   - component: {fileID: 212919074943338890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HumanBodyWalk2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,9 @@ GameObject:
   - component: {fileID: 114654585301445940}
   - component: {fileID: 114772532411998636}
   - component: {fileID: 114659739588183218}
-  m_Layer: 0
+  - component: {fileID: 135804653959760612}
+  - component: {fileID: 82010772178094302}
+  m_Layer: 8
   m_Name: human
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4504521398594858}
   - component: {fileID: 212706965112416114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HumanBodySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4118039330186908}
   - component: {fileID: 114245010371803030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HumanHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +89,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4622808531466344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HumanHeadRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4119916536228854}
   - component: {fileID: 212819821757850662}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HumanBodyWalk1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +120,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4524841244031310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HumanBodyRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +135,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4152173170631440}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HumanModelRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +149,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1560441516193166}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4622808531466344}
@@ -188,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 1858259362171426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5586442, y: 0.5586442, z: 0.5586442}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4622808531466344}
   - {fileID: 4524841244031310}
@@ -251,6 +253,86 @@ Transform:
   m_Father: {fileID: 4152173170631440}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &82010772178094302
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304376015034780}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5d4aaaaa316a67f4ca2a304d36a189d4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114083629978582644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,10 +355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b9af81f1cd1f245872c78282690feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mocFile: {fileID: 4900000, guid: bc32526e04942784bbc334c410ac06df, type: 3}
+  mocFile: {fileID: 4900000, guid: 4802da81897502249a7e0b6827ce1467, type: 3}
   physicsFile: {fileID: 0}
   textureFiles:
-  - {fileID: 2800000, guid: b5c6320e67d64244a91359499ff09ca7, type: 3}
+  - {fileID: 2800000, guid: 4210d9da517ef3547bc4349268b8f2d1, type: 3}
 --- !u!114 &114654585301445940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -319,8 +401,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198a704abcbeb9146851e21d2acc4fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LUAGHT_TIME: 5
-  FADE_OUT_TIME: 2
+  LUAGHT_TIME: 2
+  FADE_OUT_TIME: 1
+--- !u!135 &135804653959760612
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304376015034780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &195067328876017432
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -375,7 +469,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 271a8c7c2b4e14348aabf96ce902556a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -419,7 +513,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 95820643ea571d4479272538ec6d09d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -463,7 +557,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f2db7568b9e67384893daf74d75163a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

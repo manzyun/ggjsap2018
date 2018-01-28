@@ -29,8 +29,9 @@ public class Level00SpawnScript : MonoBehaviour, SpawnInterface {
         while(true)
         {
             Instantiate(human_prefab, spawn_positions[Random.Range(0, spawn_positions.Count)], Quaternion.identity);
+            GameObject.Find("EnemySpawner").GetComponent<AudioSource>().Play();
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(Random.Range(0.75f, 1.25f));
         }
         //Instantiate(human_prefab, spawn_positions[0], Quaternion.identity);
 
