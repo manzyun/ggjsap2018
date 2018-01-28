@@ -39,4 +39,9 @@ public class GameInstanceComponent : MonoBehaviour {
 
         SceneManager.LoadScene("Main");
     }
+
+    public void ReloadMainScene()
+    {
+        LoadMainScene(level_index);
+    }
 }

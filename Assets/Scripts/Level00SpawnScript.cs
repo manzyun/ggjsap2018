@@ -22,6 +22,11 @@ public class Level00SpawnScript : MonoBehaviour, SpawnInterface {
 
     IEnumerator SpawnCoroutine()
     {
-        yield return new WaitForSeconds(1);
+        //yield return new WaitForSeconds(1);
+
+        while(true)
+        {
+            Debug.Log("Spawn" + spawn_positions[Random.Range(0, spawn_positions.Count)]);
+        }
     }
 }
