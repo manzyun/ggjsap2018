@@ -32,7 +32,7 @@ public class HumanMove : MonoBehaviour {
 
         while (getPositionFrag == false)
         {
-            //print("dd");
+            print("dd");
             GoingPositionGet();
         };
     }
@@ -46,7 +46,7 @@ public class HumanMove : MonoBehaviour {
 
     private void GoingPositionGet()
     {
-        //print("aa");
+        print("aa");
 
         randomPsitionX = Random.Range(MIN_X_POSITION, MAX_X_POSITION + 1);
         randomPsitionZ = Random.Range(MIN_Z_POSITION, MAX_Z_POSITION + 1);
