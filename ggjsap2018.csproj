@@ -283,11 +283,27 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/Yas/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
+    <Reference Include="Live2DUnity">
+      <HintPath>Assets/lib/Live2DUnity.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AutoScaleCamera.cs" />
     <Compile Include="Assets\Scripts\HumanLaught.cs" />
     <Compile Include="Assets\Scripts\HumanMove.cs" />
+    <Compile Include="Assets\Scripts\HumanScore.cs" />
+    <Compile Include="Assets\Scripts\HumanStateComponent.cs" />
+    <Compile Include="Assets\Scripts\Live2D\L2DPhysics.cs" />
+    <Compile Include="Assets\Scripts\Live2D\L2DTargetPoint.cs" />
+    <Compile Include="Assets\Scripts\Live2D\SimpleModel.cs" />
+    <Compile Include="Assets\Scripts\Score.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\lib\Resources\shader\Live2D-SetupMask.shader" />
+    <None Include="Assets\lib\Resources\shader\merged\Live2D-Masked-PremultipliedAlpha.shader" />
+    <None Include="Assets\lib\Resources\shader\merged\Live2D-Masked.shader" />
+    <None Include="Assets\lib\Resources\shader\merged\Live2D-PremultipliedAlpha.shader" />
+    <None Include="Assets\lib\Resources\shader\merged\Live2D.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

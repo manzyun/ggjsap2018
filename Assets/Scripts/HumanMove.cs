@@ -4,11 +4,20 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class HumanMove : MonoBehaviour {
+    //Components
+    private NavMeshAgent agent;
+    private Rigidbody rigid;
+    private HumanStateComponent state_com;
+    private HumanLaught humanLaught;
+    private GameObject PLAYER;
 
+    //SerializeField
     [SerializeField]
     float DEFULT_WALK_SPEED;
-    private NavMeshAgent agent;
-    private HumanLaught humanLaught;
+    [SerializeField]
+    float close_distance;
+
+    //Value
     private float MAX_X_POSITION = 5.8f,
                   MIN_X_POSITION = -5.8f,
                   MAX_Z_POSITION = 3f,
@@ -25,33 +34,60 @@ public class HumanMove : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        humanLaught = GetComponent<HumanLaught>();
+        SetComponents();
 
+        
+    }
+
+    void SetComponents()
+    {
         agent = this.gameObject.GetComponent<NavMeshAgent>();
-        // agent.SetDestination(new Vector3(2, 0, 2));
+        rigid = this.gameObject.GetComponent<Rigidbody>();
+        state_com = GetComponent<HumanStateComponent>();
+        humanLaught = GetComponent<HumanLaught>();
+        PLAYER = GameObject.FindGameObjectWithTag("Player");
 
-        while (getPositionFrag == false)
-        {
-            print("dd");
-            GoingPositionGet();
-        };
     }
 
     // Update is called once per frame
     void Update () {
-
         SetWalkSpeed();
+
+        if(state_com.state == HumanState.Idle)
+        {
+            if(GetDistanceWithPlayer() <= close_distance)
+            {
+                state_com.SetState(HumanState.Walk);
+                GoRandomPosition();
+            }
+        }
+        else if(state_com.state == HumanState.Walk)
+        {
+            if((new Vector3(transform.position.x, 0, transform.position.z) - randomPosition).magnitude <= 0.1f)
+            {
+                state_com.SetState(HumanState.Idle);
+            }
+        }
+    }
+
+    public void GoRandomPosition()
+    {
+        while (true)
+        {
+            if (GoingPositionGet())
+            {
+                break;
+            }
+        };
     }
 
 
-    private void GoingPositionGet()
+    bool GoingPositionGet()
     {
-        print("aa");
-
         randomPsitionX = Random.Range(MIN_X_POSITION, MAX_X_POSITION + 1);
         randomPsitionZ = Random.Range(MIN_Z_POSITION, MAX_Z_POSITION + 1);
 
-        ray = new Ray(new Vector3(randomPsitionX, 1, randomPsitionZ),new Vector3(0,-5,0));
+        ray = new Ray(new Vector3(randomPsitionX, 1, randomPsitionZ), new Vector3(0, -5, 0));
 
         Debug.DrawRay(ray.origin, ray.direction, Color.red);
 
@@ -60,7 +96,7 @@ public class HumanMove : MonoBehaviour {
         LayerMask ground_mask = LayerMask.GetMask("Ground");
         LayerMask house_mask = LayerMask.GetMask("House");
 
-        if(Physics.Raycast(ray, 100, ground_mask) && Physics.Raycast(ray, 100, house_mask) == false)
+        if (Physics.Raycast(ray, 100, ground_mask) && Physics.Raycast(ray, 100, house_mask) == false)
         {
             movementrange = Vector3.Distance(this.transform.position, randomPosition);
 
@@ -68,9 +104,11 @@ public class HumanMove : MonoBehaviour {
             {
 
                 agent.SetDestination(new Vector3(randomPsitionX, 0, randomPsitionZ));
-                getPositionFrag = true;
+                return true;
             }
         }
+
+        return false;
     }
 
     void SetWalkSpeed()
@@ -83,4 +121,8 @@ public class HumanMove : MonoBehaviour {
         return 1.0f - laught_value;
     }
     
+    float GetDistanceWithPlayer()
+    {
+        return Vector3.Distance(this.transform.position, PLAYER.transform.position);
+    }
 }
