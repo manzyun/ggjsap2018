@@ -30,11 +30,11 @@ public class HumanMove : MonoBehaviour {
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         // agent.SetDestination(new Vector3(2, 0, 2));
 
-        while (getPositionFrag == false)
-        {
-            print("dd");
-            GoingPositionGet();
-        };
+        //while (getPositionFrag == false)
+        //{
+        //    print("dd");
+        //    GoingPositionGet();
+        //};
     }
 
     // Update is called once per frame

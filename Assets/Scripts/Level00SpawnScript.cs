@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Level00SpawnScript : MonoBehaviour, SpawnInterface {
     List<Vector3> spawn_positions;
+    GameObject human_prefab;
 
-    public void SpawnStart(List<Vector3> spawn_positions)
+    public void SpawnStart(List<Vector3> spawn_positions, GameObject human_prefab)
     {
+        this.spawn_positions = spawn_positions;
+        this.human_prefab = human_prefab;
+
         StartCoroutine("SpawnCoroutine");
     }
 
@@ -22,11 +26,14 @@ public class Level00SpawnScript : MonoBehaviour, SpawnInterface {
 
     IEnumerator SpawnCoroutine()
     {
-        //yield return new WaitForSeconds(1);
-
         while(true)
         {
-            Debug.Log("Spawn" + spawn_positions[Random.Range(0, spawn_positions.Count)]);
+            Instantiate(human_prefab, spawn_positions[Random.Range(0, spawn_positions.Count)], Quaternion.identity);
+
+            yield return new WaitForSeconds(1);
         }
+        //Instantiate(human_prefab, spawn_positions[0], Quaternion.identity);
+
+        yield return null;
     }
 }

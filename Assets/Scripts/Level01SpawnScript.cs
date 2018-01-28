@@ -5,9 +5,13 @@ using UnityEngine;
 public class Level01SpawnScript : MonoBehaviour, SpawnInterface
 {
     List<Vector3> spawn_positions;
+    GameObject human_prefab;
 
-    public void SpawnStart(List<Vector3> spawn_positions)
+    public void SpawnStart(List<Vector3> spawn_positions, GameObject human_prefab)
     {
+        this.spawn_positions = spawn_positions;
+        this.human_prefab = human_prefab;
+
         StartCoroutine("SpawnCoroutine");
     }
 

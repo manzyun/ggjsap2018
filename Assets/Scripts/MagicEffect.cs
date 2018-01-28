@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagicEffect : MonoBehaviour {
+public class MagicEffect : MonoBehaviour
+{
     [SerializeField]
     float degree,
         speed,
@@ -14,14 +15,16 @@ public class MagicEffect : MonoBehaviour {
     [SerializeField]
     int magic_num;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetMouseButtonDown(0) && IsMousePositionOnGround())
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && IsMousePositionOnGround())
         {
             for (int i = 0; i < magic_num; i++)
             {
@@ -31,7 +34,7 @@ public class MagicEffect : MonoBehaviour {
 
                 float random_duration = Random.Range(0, duration);
 
-                GameObject child = Instantiate(magic_prefab, transform);
+                GameObject child = Instantiate(magic_prefab);
                 child.transform.position = transform.position + new Vector3(0, 0.01f, 0) + direction * speed * random_duration;
                 child.GetComponent<MagicMove>().Setup(direction, speed, duration - random_duration, magic_sprites[Random.Range(0, magic_sprites.Length)]);
             }
@@ -47,7 +50,7 @@ public class MagicEffect : MonoBehaviour {
             //    child.GetComponent<MagicMove>().Setup(direction, speed, duration, magic_sprites[Random.Range(0, magic_sprites.Length)]);
             //}
         }
-	}
+    }
 
     bool IsMousePositionOnGround()
     {

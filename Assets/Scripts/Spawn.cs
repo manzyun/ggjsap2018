@@ -11,6 +11,9 @@ public class Spawn : MonoBehaviour {
 
     SpawnInterface script;
 
+    [SerializeField]
+    public GameObject human_prefab;
+
     // Use this for initialization
     void Awake () {
         if (script == null)
@@ -39,10 +42,10 @@ public class Spawn : MonoBehaviour {
         List<Vector3> spawn_positions = new List<Vector3>();
         foreach (Transform spawn_point in spawn_points)
         {
-            spawn_positions.Add(spawn_point.position + new Vector3(x_offset, 0, 0));
+            spawn_positions.Add(spawn_point.position + new Vector3(0, 0, x_offset));
         }
 
-        GetComponent<SpawnInterface>().SpawnStart(spawn_positions);
+        GetComponent<SpawnInterface>().SpawnStart(spawn_positions, human_prefab);
     }
 
     public float GetTimeLimit()

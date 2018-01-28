@@ -22,6 +22,8 @@ public class HumanLaught : MonoBehaviour {
 
     public void LaughtAdd(float AddPoint)
     {
+        Debug.Log("Damaged" + AddPoint);
+
         laught += AddPoint;
 
         if(laught > 1.0f)
@@ -39,7 +41,6 @@ public class HumanLaught : MonoBehaviour {
         yield return new WaitForSeconds(LUAGHT_TIME);
 
         //消える処理
-
         yield return new WaitForSeconds(FADE_OUT_TIME);
 
         Destroy(this.gameObject);

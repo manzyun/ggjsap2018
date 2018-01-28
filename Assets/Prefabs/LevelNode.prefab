@@ -403,8 +403,8 @@ MonoBehaviour:
   lock_image: {fileID: 114188758757022618}
   level_text: {fileID: 114036242267498838}
   score_num_text: {fileID: 114037344640898346}
-  lock_sprite: {fileID: 21300000, guid: 64122898c7f2a8f45a3c0d9b8dc5782e, type: 3}
-  unlock_sprite: {fileID: 21300000, guid: 1953d029cf106c84bab2282531718db3, type: 3}
+  lock_sprite: {fileID: 21300000, guid: dc28774a86cf97244a994bd64991e54f, type: 3}
+  unlock_sprite: {fileID: 21300000, guid: e6b6e3689409b9b478d60328dc5fd1d5, type: 3}
 --- !u!222 &222226257449417388
 CanvasRenderer:
   m_ObjectHideFlags: 1
