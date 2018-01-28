@@ -9,7 +9,7 @@ public class HumanLaught : MonoBehaviour {
           FADE_OUT_TIME = 2.0f;
           
     public float laught { private set; get; }
-
+    bool max_laught_trigger = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,18 +18,28 @@ public class HumanLaught : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	}
+        if(Input.GetMouseButtonDown(0))
+        {
+            LaughtAdd(0.1f);
+        }
+    }
 
     public void LaughtAdd(float AddPoint)
     {
-        Debug.Log("Damaged" + AddPoint);
-
-        laught += AddPoint;
-
-        if(laught > 1.0f)
+        if (max_laught_trigger == false)
         {
-            laught = 1.0f;
-            StartCoroutine("LaughtMax");
+            laught += AddPoint;
+
+            if (laught > 1.0f)
+            {
+                max_laught_trigger = true;
+                laught = 1.0f;
+                StartCoroutine("LaughtMax");
+            }
+            else
+            {
+                GetComponent<HumanMove>().GoRandomPosition();
+            }
         }
     }
 

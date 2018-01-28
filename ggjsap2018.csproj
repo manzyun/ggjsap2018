@@ -259,6 +259,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Live2DUnity">
+      <HintPath>Assets/lib/Live2DUnity.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Advertisements">
       <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
     </Reference>
@@ -280,13 +283,11 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>Library\UnityAssemblies\UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
-    <Reference Include="Live2DUnity">
-      <HintPath>Assets\lib\Live2DUnity.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AutoScaleCamera.cs" />
     <Compile Include="Assets\Scripts\GameInstanceComponent.cs" />
+    <Compile Include="Assets\Scripts\HumanBodyAnime.cs" />
     <Compile Include="Assets\Scripts\HumanLaught.cs" />
     <Compile Include="Assets\Scripts\HumanMove.cs" />
     <Compile Include="Assets\Scripts\HumanScore.cs" />
