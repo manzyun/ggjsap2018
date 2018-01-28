@@ -23,8 +23,8 @@ public class PlayerMagic : MonoBehaviour
 
     void Awake()
     {
-        rangePoint = transform.Find("RangePoint").gameObject;
-        mousePointer = GameObject.Find("MousePointer");
+        //rangePoint = transform.Find("RangePoint").gameObject;
+        //mousePointer = GameObject.Find("MousePointer");
     }
 
     void Update()

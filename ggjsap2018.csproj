@@ -290,6 +290,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AutoScaleCamera.cs" />
     <Compile Include="Assets\Scripts\GameInstanceComponent.cs" />
+    <Compile Include="Assets\Scripts\HumanBodyAnime.cs" />
     <Compile Include="Assets\Scripts\HumanLaught.cs" />
     <Compile Include="Assets\Scripts\HumanMove.cs" />
     <Compile Include="Assets\Scripts\HumanScore.cs" />
