@@ -10,39 +10,24 @@ public class HumanLaught : MonoBehaviour {
           
     public float laught { private set; get; }
 
-    HumanScore score_com;
 
 	// Use this for initialization
 	void Start () {
-        score_com = GetComponent<HumanScore>();
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (Input.GetKey(KeyCode.C))
-        {
-            LaughtAdd(0.1f);
-        }
 	}
 
     public void LaughtAdd(float AddPoint)
     {
-        if(laught == 0.0f)
-        {
-            laught += AddPoint;
-            score_com.ReSetTimer();
-        }
-        else
-        {
+        laught += AddPoint;
 
-            laught += AddPoint;
-
-            if (laught > 1.0f)
-            {
-                laught = 1.0f;
-                StartCoroutine("LaughtMax");
-            }
+        if(laught > 1.0f)
+        {
+            laught = 1.0f;
+            StartCoroutine("LaughtMax");
         }
     }
 
@@ -63,6 +48,6 @@ public class HumanLaught : MonoBehaviour {
 
     private void OnLaughtValueMax()
     {
-        GetComponent<HumanScore>().BonaceScoreAdd();
+
     }
 }
