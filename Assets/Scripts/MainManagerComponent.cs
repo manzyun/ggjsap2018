@@ -58,6 +58,11 @@ public class MainManagerComponent : MonoBehaviour {
     void SetupClear()
     {
         state = MainState.Clear;
+
+        GameInstanceComponent instance = GameObject.Find("GameInstance").GetComponent<GameInstanceComponent>();
+        instance.SetStageClearInfo(instance.level_index, score.score);
+
+        instance.LoadLevelSelectScene();
     }
 
     void SetupGameOver()

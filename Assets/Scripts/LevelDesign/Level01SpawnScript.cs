@@ -17,7 +17,7 @@ public class Level01SpawnScript : MonoBehaviour, SpawnInterface
 
     public int GetClearScore()
     {
-        return 10000;
+        return 3500;
     }
 
     public float GetTimeLimit()
@@ -27,6 +27,14 @@ public class Level01SpawnScript : MonoBehaviour, SpawnInterface
 
     IEnumerator SpawnCoroutine()
     {
-        yield return new WaitForSeconds(1);
+        while (true)
+        {
+            GameObject instance = Instantiate(human_prefab, spawn_positions[Random.Range(0, spawn_positions.Count)], Quaternion.identity);
+            instance.GetComponent<HumanGender>().SetGender(Random.Range(0, 2) == 0 ? Gender.male : Gender.female);
+
+            GameObject.Find("EnemySpawner").GetComponent<AudioSource>().Play();
+
+            yield return new WaitForSeconds(Random.Range(0.75f, 1.25f));
+        }
     }
 }

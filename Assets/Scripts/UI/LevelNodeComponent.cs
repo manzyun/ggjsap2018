@@ -20,11 +20,20 @@ public class LevelNodeComponent : MonoBehaviour
     int level_index;
     int bestscore;
 
-    public void SetupUI(bool is_lock, int level_index, int bestscore)
+    public void SetupUI(int level_index)
     {
-        this.is_lock = is_lock;
         this.level_index = level_index;
-        this.bestscore = bestscore;
+
+        if (level_index == 0)
+        {
+            this.is_lock = false;
+            this.bestscore = GameObject.Find("GameInstance").GetComponent<GameInstanceComponent>().GetStageClearInfo(level_index).bestScore;
+        }
+        else
+        {
+            this.is_lock = GameObject.Find("GameInstance").GetComponent<GameInstanceComponent>().GetStageClearInfo(level_index - 1).isClear == 0 ? true : false;
+            this.bestscore = GameObject.Find("GameInstance").GetComponent<GameInstanceComponent>().GetStageClearInfo(level_index).bestScore;
+        }
 
         if (is_lock)
         {
