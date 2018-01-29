@@ -307,7 +307,7 @@ MonoBehaviour:
   - {fileID: 278090414}
   - {fileID: 2135764069}
   - {fileID: 1745242996}
-  human_prefab: {fileID: 1304376015034780, guid: ce17f7deb36a054429673d80bd58b54b,
+  human_prefab: {fileID: 1626115441065106, guid: ce17f7deb36a054429673d80bd58b54b,
     type: 2}
 --- !u!82 &81588199
 AudioSource:
@@ -532,6 +532,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4375932136476892, guid: 09b44dea9086a674897f1a6e6722b2dc, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1061222672226168, guid: 09b44dea9086a674897f1a6e6722b2dc, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23204365946581700, guid: 09b44dea9086a674897f1a6e6722b2dc,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2133,6 +2142,11 @@ Prefab:
       propertyPath: m_Name
       value: House (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 23204365946581700, guid: 09b44dea9086a674897f1a6e6722b2dc,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09b44dea9086a674897f1a6e6722b2dc, type: 2}
   m_IsPrefabParent: 0
@@ -2415,7 +2429,7 @@ Prefab:
     - target: {fileID: 23204365946581700, guid: 09b44dea9086a674897f1a6e6722b2dc,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1146623095268044, guid: 09b44dea9086a674897f1a6e6722b2dc, type: 2}
       propertyPath: m_Name

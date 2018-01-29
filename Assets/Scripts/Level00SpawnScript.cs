@@ -28,13 +28,12 @@ public class Level00SpawnScript : MonoBehaviour, SpawnInterface {
     {
         while(true)
         {
-            Instantiate(human_prefab, spawn_positions[Random.Range(0, spawn_positions.Count)], Quaternion.identity);
+            GameObject instance = Instantiate(human_prefab, spawn_positions[Random.Range(0, spawn_positions.Count)], Quaternion.identity);
+            instance.GetComponent<HumanGender>().SetGender(Random.Range(0, 2) == 0 ? Gender.male : Gender.female);
+
             GameObject.Find("EnemySpawner").GetComponent<AudioSource>().Play();
 
             yield return new WaitForSeconds(Random.Range(0.75f, 1.25f));
         }
-        //Instantiate(human_prefab, spawn_positions[0], Quaternion.identity);
-
-        yield return null;
     }
 }
