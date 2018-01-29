@@ -31,6 +31,7 @@ public class HumanLaught : MonoBehaviour {
             }
             else
             {
+                GetComponent<HumanScore>().AddScore(laught);
                 GetComponent<HumanMove>().GoRandomPosition();
             }
         }
@@ -52,6 +53,6 @@ public class HumanLaught : MonoBehaviour {
 
     private void OnLaughtValueMax()
     {
-
+        GetComponent<HumanScore>().AddBonusScore();
     }
 }

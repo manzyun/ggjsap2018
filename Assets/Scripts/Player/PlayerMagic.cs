@@ -135,6 +135,8 @@ public class PlayerMagic : MonoBehaviour
                         human.GetComponent<HumanLaught>().LaughtAdd(0.5f);
                     }
                 }
+
+                magicEffect.PlayMagicEffect();
             }
         }
 

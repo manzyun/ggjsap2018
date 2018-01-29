@@ -16,12 +16,12 @@ public class Level00SpawnScript : MonoBehaviour, SpawnInterface {
 
     public int GetClearScore()
     {
-        return 10000;
+        return 3500;
     }
 
     public float GetTimeLimit()
     {
-        return 90.0f;
+        return 60.0f;
     }
 
     IEnumerator SpawnCoroutine()

@@ -7,6 +7,10 @@ public class MainManagerComponent : MonoBehaviour {
     float before_play_time;
     [SerializeField]
     Spawn enemy_spawner;
+    [SerializeField]
+    Score score;
+    [SerializeField]
+    TimeManagerComponent timeManager;
 
     public MainState state { get; private set; }
 	// Use this for initialization
@@ -17,7 +21,6 @@ public class MainManagerComponent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
     IEnumerator PlayCoroutine()
@@ -26,18 +29,6 @@ public class MainManagerComponent : MonoBehaviour {
         yield return new WaitForSeconds(before_play_time);
 
         SetupPlay();
-        yield return new WaitForSeconds(enemy_spawner.GetTimeLimit());
-
-        //dummy flag
-        bool clear = true;
-        if(clear)
-        {
-            SetupClear();
-        }
-        else
-        {
-            SetupGameOver();
-        }
     }
 
     void SetupBeforePlay()
@@ -49,6 +40,19 @@ public class MainManagerComponent : MonoBehaviour {
     {
         state = MainState.Play;
         enemy_spawner.SpawnStart();
+        timeManager.CountDownStart();
+    }
+
+    public void EndPlay()
+    {
+        if(score.score >= enemy_spawner.GetClearScore())
+        {
+            SetupClear();
+        }
+        else
+        {
+            SetupGameOver();
+        }
     }
 
     void SetupClear()

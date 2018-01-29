@@ -262,6 +262,12 @@
     <Reference Include="Live2DUnity">
       <HintPath>Assets/lib/Live2DUnity.dll</HintPath>
     </Reference>
+    <Reference Include="TextMeshPro-2017.3-1.0.56-Editor">
+      <HintPath>Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="TextMeshPro-2017.3-1.0.56-Runtime">
+      <HintPath>Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Advertisements">
       <HintPath>C:/Users/Yas/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
@@ -283,39 +289,34 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/Yas/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
-    <Reference Include="TextMeshPro-2017.3-1.0.56-Runtime">
-      <HintPath>Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="TextMeshPro-2017.3-1.0.56-Editor">
-      <HintPath>Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AutoScaleCamera.cs" />
+    <Compile Include="Assets\Scripts\Camera\AutoScaleCamera.cs" />
     <Compile Include="Assets\Scripts\GameInstanceComponent.cs" />
-    <Compile Include="Assets\Scripts\HumanDetectAnimeState.cs" />
-    <Compile Include="Assets\Scripts\HumanGender.cs" />
-    <Compile Include="Assets\Scripts\HumanLaught.cs" />
-    <Compile Include="Assets\Scripts\HumanMove.cs" />
-    <Compile Include="Assets\Scripts\HumanPlayAnime.cs" />
-    <Compile Include="Assets\Scripts\HumanScore.cs" />
-    <Compile Include="Assets\Scripts\HumanStateComponent.cs" />
-    <Compile Include="Assets\Scripts\Level00SpawnScript.cs" />
-    <Compile Include="Assets\Scripts\Level01SpawnScript.cs" />
-    <Compile Include="Assets\Scripts\LevelNodeComponent.cs" />
+    <Compile Include="Assets\Scripts\Human\HumanDetectAnimeState.cs" />
+    <Compile Include="Assets\Scripts\Human\HumanGender.cs" />
+    <Compile Include="Assets\Scripts\Human\HumanLaught.cs" />
+    <Compile Include="Assets\Scripts\Human\HumanMove.cs" />
+    <Compile Include="Assets\Scripts\Human\HumanPlayAnime.cs" />
+    <Compile Include="Assets\Scripts\Human\HumanScore.cs" />
+    <Compile Include="Assets\Scripts\Human\HumanStateComponent.cs" />
+    <Compile Include="Assets\Scripts\LevelDesign\Level00SpawnScript.cs" />
+    <Compile Include="Assets\Scripts\LevelDesign\Level01SpawnScript.cs" />
+    <Compile Include="Assets\Scripts\LevelDesign\SpawnInterface.cs" />
     <Compile Include="Assets\Scripts\LevelSelectManagerComponent.cs" />
     <Compile Include="Assets\Scripts\Live2D\L2DPhysics.cs" />
     <Compile Include="Assets\Scripts\Live2D\L2DTargetPoint.cs" />
     <Compile Include="Assets\Scripts\Live2D\SimpleModel.cs" />
-    <Compile Include="Assets\Scripts\MagicEffect.cs" />
-    <Compile Include="Assets\Scripts\MagicMove.cs" />
     <Compile Include="Assets\Scripts\MainManagerComponent.cs" />
-    <Compile Include="Assets\Scripts\PlayerMagic.cs" />
-    <Compile Include="Assets\Scripts\PlayerMove.cs" />
+    <Compile Include="Assets\Scripts\Player\MagicEffect.cs" />
+    <Compile Include="Assets\Scripts\Player\MagicMove.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMagic.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
     <Compile Include="Assets\Scripts\Spawn.cs" />
-    <Compile Include="Assets\Scripts\SpawnInterface.cs" />
+    <Compile Include="Assets\Scripts\TimeManagerComponent.cs" />
     <Compile Include="Assets\Scripts\TitleManagerComponent.cs" />
+    <Compile Include="Assets\Scripts\UI\LevelNodeComponent.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
