@@ -50,8 +50,8 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    public string GetPlayerState()
+    public PlayerState GetPlayerState()
     {
-        return playerState.ToString();
+        return playerState;
     }
 }

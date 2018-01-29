@@ -7,6 +7,9 @@ public class HumanLaught : MonoBehaviour {
     [SerializeField]
     float LUAGHT_TIME = 5.0f,
           FADE_OUT_TIME = 2.0f;
+
+    [SerializeField]
+    AudioSource hitAudioSource, successAudioSource;
           
     public float laught { private set; get; }
     bool max_laught_trigger = false;
@@ -21,7 +24,6 @@ public class HumanLaught : MonoBehaviour {
         if (max_laught_trigger == false)
         {
             laught += AddPoint;
-            GetComponent<AudioSource>().Play();
 
             if (laught > 1.0f)
             {
@@ -31,6 +33,7 @@ public class HumanLaught : MonoBehaviour {
             }
             else
             {
+                hitAudioSource.Play();
                 GetComponent<HumanScore>().AddScore(laught);
                 GetComponent<HumanMove>().GoRandomPosition();
             }
@@ -53,6 +56,7 @@ public class HumanLaught : MonoBehaviour {
 
     private void OnLaughtValueMax()
     {
+        successAudioSource.Play();
         GetComponent<HumanScore>().AddBonusScore();
     }
 }

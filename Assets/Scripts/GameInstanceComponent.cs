@@ -58,7 +58,10 @@ public class GameInstanceComponent : MonoBehaviour {
     public void SetStageClearInfo(int level_index, int bestScore)
     {
         PlayerPrefs.SetInt("isClear_" + level_index, 1);
-        PlayerPrefs.SetInt("bestScore_" + level_index, bestScore);
+
+        int oldScore = GetStageClearInfo(level_index).bestScore;
+
+        PlayerPrefs.SetInt("bestScore_" + level_index, Mathf.Max(oldScore, bestScore));
     }
 }
 

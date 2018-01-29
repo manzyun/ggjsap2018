@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MainManagerComponent : MonoBehaviour {
     [SerializeField]
@@ -11,6 +12,8 @@ public class MainManagerComponent : MonoBehaviour {
     Score score;
     [SerializeField]
     TimeManagerComponent timeManager;
+    [SerializeField]
+    TextMeshProUGUI middleText;
 
     public MainState state { get; private set; }
 	// Use this for initialization
@@ -33,41 +36,61 @@ public class MainManagerComponent : MonoBehaviour {
 
     void SetupBeforePlay()
     {
+        GameObject.FindWithTag("Player").GetComponent<PlayerMove>().playerState = PlayerMove.PlayerState.BEFORE_PLAY;
 
+        middleText.text = "クリア条件\n" + (int)enemy_spawner.GetTimeLimit() + "秒以内に" + enemy_spawner.GetClearScore() + "点稼げ";
     }
 
     void SetupPlay()
     {
         state = MainState.Play;
+        GameObject.FindWithTag("Player").GetComponent<PlayerMove>().playerState = PlayerMove.PlayerState.PLAY;
+
         enemy_spawner.SpawnStart();
         timeManager.CountDownStart();
+
+        middleText.text = "";
     }
 
     public void EndPlay()
     {
         if(score.score >= enemy_spawner.GetClearScore())
         {
-            SetupClear();
+            StartCoroutine("SetupClear");
         }
         else
         {
-            SetupGameOver();
+            StartCoroutine("SetupGameOver");
         }
     }
 
-    void SetupClear()
+    IEnumerator SetupClear()
     {
         state = MainState.Clear;
+        GameObject.FindWithTag("Player").GetComponent<PlayerMove>().playerState = PlayerMove.PlayerState.CLEAR;
 
         GameInstanceComponent instance = GameObject.Find("GameInstance").GetComponent<GameInstanceComponent>();
         instance.SetStageClearInfo(instance.level_index, score.score);
 
+        middleText.text = "ステージクリア";
+
+        yield return new WaitForSeconds(5.0f);
+
         instance.LoadLevelSelectScene();
     }
 
-    void SetupGameOver()
+    IEnumerator SetupGameOver()
     {
         state = MainState.GameOver;
+        GameObject.FindWithTag("Player").GetComponent<PlayerMove>().playerState = PlayerMove.PlayerState.GAME_OVER;
+
+        GameInstanceComponent instance = GameObject.Find("GameInstance").GetComponent<GameInstanceComponent>();
+
+        middleText.text = "ゲームオーバー";
+
+        yield return new WaitForSeconds(5.0f);
+
+        instance.LoadLevelSelectScene();
     }
 }
 

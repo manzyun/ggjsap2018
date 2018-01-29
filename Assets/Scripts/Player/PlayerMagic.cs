@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerMagic : MonoBehaviour
 {
     private PlayerMove playerMove;
-    private string playerState;
+    private PlayerMove.PlayerState playerState;
 
     private MagicEffect magicEffect;
 
@@ -51,6 +51,7 @@ public class PlayerMagic : MonoBehaviour
     [SerializeField]
     private float recoverySpeed = 30f;
 
+    [SerializeField]
     private Slider magicPointSlider;
 
     void Awake()
@@ -60,7 +61,7 @@ public class PlayerMagic : MonoBehaviour
 
         rangeCenter = transform.Find("RangeCenter").gameObject;
         mousePointer = GameObject.Find("MousePointer");
-        magicPointSlider = GameObject.Find("MagicPointSlider").GetComponent<Slider>();
+        //magicPointSlider = GameObject.Find("MagicPointSlider").GetComponent<Slider>();
     }
 
     void Start()
@@ -72,7 +73,7 @@ public class PlayerMagic : MonoBehaviour
     {
         playerState = playerMove.GetPlayerState();
 
-        if (playerState == "PLAY")
+        if (playerState == PlayerMove.PlayerState.PLAY)
         {
             UpdateRange();
             UpdateAttack();
