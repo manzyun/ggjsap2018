@@ -17,7 +17,7 @@ public class Level01SpawnScript : MonoBehaviour, SpawnInterface
 
     public int GetClearScore()
     {
-        return 3500;
+        return 4000;
     }
 
     public float GetTimeLimit()

@@ -317,6 +317,7 @@
     <Compile Include="Assets\Scripts\TimeManagerComponent.cs" />
     <Compile Include="Assets\Scripts\TitleManagerComponent.cs" />
     <Compile Include="Assets\Scripts\UI\LevelNodeComponent.cs" />
+    <Compile Include="Assets\Scripts\UI\ScoreAnimation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

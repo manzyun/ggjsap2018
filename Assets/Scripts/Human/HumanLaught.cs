@@ -10,6 +10,8 @@ public class HumanLaught : MonoBehaviour {
 
     [SerializeField]
     AudioSource hitAudioSource, successAudioSource;
+    [SerializeField]
+    ScoreAnimation scoreAnimation;
           
     public float laught { private set; get; }
     bool max_laught_trigger = false;
@@ -58,5 +60,6 @@ public class HumanLaught : MonoBehaviour {
     {
         successAudioSource.Play();
         GetComponent<HumanScore>().AddBonusScore();
+        scoreAnimation.StartAnimation((int)GetComponent<HumanScore>().bonusScore);
     }
 }

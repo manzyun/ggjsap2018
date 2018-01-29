@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HumanScore : MonoBehaviour {
     [SerializeField]
-    float baseScore = 10f,
-          bonusScore = 100f;
+    public float baseScore = 10f,
+                bonusScore = 100f;
     private Score score;
     private float timer = 0.0f;
 
