@@ -23,7 +23,7 @@ public class LevelSelectManagerComponent : MonoBehaviour {
         for (int i = 0; i < 10; i++)
         {
             GameObject node = Instantiate(node_prefab, node_parent);
-            node.GetComponent<LevelNodeComponent>().SetupUI(i == 0 ? false : true, i, 0);
+            node.GetComponent<LevelNodeComponent>().SetupUI(i);
         }
     }
 }
